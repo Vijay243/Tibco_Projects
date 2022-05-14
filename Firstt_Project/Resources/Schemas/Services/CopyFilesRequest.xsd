@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Header="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Header"
+	 xmlns:CopyFilesRequest="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/CopyFilesRequest"
+	 targetNamespace="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/CopyFilesRequest"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Header" schemaLocation="../Common-schemas/Header.xsd"/>
+	<xs:element name="CopyFilesRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Header:Header"/>
+				<xs:element ref="CopyFilesRequest:Body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sourseName">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="sourceDirectoryPath" type="xs:string"/>
+							<xs:element name="sourceFileName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="targetName">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="targetDirectoryPath" type="xs:string"/>
+							<xs:element name="targetFileName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

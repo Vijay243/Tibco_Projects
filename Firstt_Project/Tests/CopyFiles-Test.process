@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Context" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/CopyFilesRequest" xmlns:ns2="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Header">
+    <pd:name>Tests/CopyFiles-Test.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>166</pd:startX>
+    <pd:startY>134</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>466</pd:endX>
+    <pd:endY>134</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1652535188513</pd:targetNamespace>
+    <pd:activity name="CopyFiles">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>312</pd:x>
+        <pd:y>114</pd:y>
+        <config>
+            <processName>/Processes/Services/SharedFolders/CopyFiles.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns:CopyFilesRequest>
+                <ns2:Header>
+                    <pfx:Context>
+                        <pfx:correlationId>
+                            <xsl:value-of select="&quot;1234&quot;"/>
+                        </pfx:correlationId>
+                    </pfx:Context>
+                    <ns2:timeStamp>
+                        <xsl:value-of select="current-dateTime()"/>
+                    </ns2:timeStamp>
+                </ns2:Header>
+                <ns:Body>
+                    <ns:sourseName>
+                        <ns:sourceDirectoryPath>
+                            <xsl:value-of select="&quot;G:\TIBCO_GIT_Projects\Files\input\&quot;"/>
+                        </ns:sourceDirectoryPath>
+                        <ns:sourceFileName>
+                            <xsl:value-of select="&quot;File_20220559161959.txt&quot;"/>
+                        </ns:sourceFileName>
+                    </ns:sourseName>
+                    <ns:targetName>
+                        <ns:targetDirectoryPath>
+                            <xsl:value-of select="&quot;G:\TIBCO_GIT_Projects\Files\input\CopyFiles\&quot;"/>
+                        </ns:targetDirectoryPath>
+                        <ns:targetFileName>
+                            <xsl:value-of select="&quot;copye.txt&quot;"/>
+                        </ns:targetFileName>
+                    </ns:targetName>
+                </ns:Body>
+            </ns:CopyFilesRequest>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>CopyFiles</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>CopyFiles</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

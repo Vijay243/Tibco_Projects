@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/RenameFilesRequest" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Services/RenameFilesResponse" xmlns:ns="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Header" xmlns:pfx3="http://www.tibco.com/namespaces/tnt/plugins/file" xmlns:ns2="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Response" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns3="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Context">
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/RenameFilesRequest" schemaLocation="/Resources/Schemas/Services/RenameFilesRequest.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Services/RenameFilesResponse" schemaLocation="/Resources/Schemas/Services/RenameFilesResponse.xsd"/>
+    <pd:name>Processes/Services/SharedFolders/Move&amp;Renamefiles.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType/>
+    <pd:startX>196</pd:startX>
+    <pd:startY>144</pd:startY>
+    <pd:returnBindings>
+        <pfx2:RenameFilesResponse>
+            <pfx2:Body>
+                <ns2:Response>
+                    <ns2:Message>
+                        <xsl:value-of select="&quot;Moved Successfully&quot;"/>
+                    </ns2:Message>
+                    <ns2:responseStatus>
+                        <xsl:value-of select="&quot;SUCCESS&quot;"/>
+                    </ns2:responseStatus>
+                </ns2:Response>
+            </pfx2:Body>
+        </pfx2:RenameFilesResponse>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType/>
+    <pd:endX>496</pd:endX>
+    <pd:endY>134</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1652543532245</pd:targetNamespace>
+    <pd:activity name="Rename File">
+        <pd:type>com.tibco.plugin.file.FileRenameActivity</pd:type>
+        <pd:resourceType>ae.activities.FileRenameActivity</pd:resourceType>
+        <pd:x>339</pd:x>
+        <pd:y>134</pd:y>
+        <config/>
+        <pd:inputBindings>
+            <pfx3:RenameActivityConfig>
+                <fromFileName>
+                    <xsl:value-of select="&quot;G:\TIBCO_GIT_Projects\Files\input\CopyFilescopye.txt&quot;"/>
+                </fromFileName>
+                <toFileName>
+                    <xsl:value-of select="&quot;G:\TIBCO_GIT_Projects\Files\Output\dataa.txt&quot;"/>
+                </toFileName>
+            </pfx3:RenameActivityConfig>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Rename File</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Rename File</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
