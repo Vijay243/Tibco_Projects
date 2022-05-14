@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Common-schemas/Header" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Context" xmlns:ns="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/ParseRenderCatlogXMLRequest" xmlns:pfx3="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/ParseRenderNamesXMLRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/SharedProcesses/ParseRenderCatlogXMLRequest" schemaLocation="/Resources/Schemas/Services/Parse&amp;RenderCatlogXMLRequest.xsd"/>
+    <pd:name>Tests/Parde&amp;RenderNameXML-Test.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>146</pd:startX>
+    <pd:startY>94</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>456</pd:endX>
+    <pd:endY>94</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1652093920987</pd:targetNamespace>
+    <pd:activity name="Parse&amp;RenderNameXML">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>294</pd:x>
+        <pd:y>84</pd:y>
+        <config>
+            <processName>/Processes/Services/SharedFolders/Parse&amp;RenderNameXML.process</processName>
+        </config>
+        <pd:inputBindings>
+            <pfx3:ParseRenderNamesXMLRequest>
+                <pfx:Header>
+                    <pfx2:Context>
+                        <pfx2:correlationId>
+                            <xsl:value-of select="&quot;12345&quot;"/>
+                        </pfx2:correlationId>
+                    </pfx2:Context>
+                    <pfx:timeStamp>
+                        <xsl:value-of select="current-dateTime()"/>
+                    </pfx:timeStamp>
+                </pfx:Header>
+                <pfx3:Body>
+                    <pfx3:sourcePath>
+                        <xsl:value-of select="&quot;G:\TIBCO_GIT_Projects\Files\input\&quot;"/>
+                    </pfx3:sourcePath>
+                    <pfx3:sourceFileName>
+                        <xsl:value-of select="&quot;Names.xml&quot;"/>
+                    </pfx3:sourceFileName>
+                </pfx3:Body>
+            </pfx3:ParseRenderNamesXMLRequest>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Parse&amp;RenderNameXML</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Parse&amp;RenderNameXML</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

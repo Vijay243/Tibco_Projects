@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:Course xmlns:ns0="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Course">
+    <ns0:id>244</ns0:id>
+    <ns0:author>aijay</ns0:author>
+    <ns0:title>rww</ns0:title>
+    <ns0:general>ffiiih</ns0:general>
+    <ns0:price>133</ns0:price>
+    <ns0:publishDate>2021-01-12</ns0:publishDate>
+</ns0:Course>

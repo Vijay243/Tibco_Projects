@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Names xmlns = "http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Names" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Names Names.xsd">
+	<Name>Vijay</Name>
+	<Name>Raji</Name>
+	<Name>Santosh</Name>
+	<Name>Vijji</Name>
+	<Name>Ranga</Name>
+	<Name>Kavya</Name>
+	<Name>Lakshmi</Name>
+	<Name>Divya</Name>
+</Names>

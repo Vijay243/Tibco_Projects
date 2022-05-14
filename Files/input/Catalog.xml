@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<catalog xmlns="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Catalog" 
+		xmlns="http://www.tibco.com/schemas/Firstt_Project/Resources/Schemas/Models/Course">
+	<Course>
+		<id>23</id>
+		<author>Ajay</author>
+		<title>Python</title>
+		<general>Pythonorg</general>
+		<price>3000</price>
+		<publishDate>2022-01-15</publishDate>
+	</Course>
+</catalog>
